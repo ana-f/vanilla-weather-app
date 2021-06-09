@@ -1,0 +1,100 @@
+body {
+  font-family: "Baloo 2", Arial, Helvetica, sans-serif;
+  color: #53565a;
+  max-width: 350px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+form {
+  text-align: center;
+  padding-top: 15px;
+}
+
+:focus {
+  outline: none;
+}
+
+footer {
+  font-size: 14px;
+  text-align: center;
+}
+
+.background {
+  background: linear-gradient(
+    180.3deg,
+    rgb(214, 224, 255) 37.2%,
+    rgb(254, 168, 168) 137.3%
+  );
+  border-radius: 10px 10px;
+  border: 2px solid rgb(214, 224, 255);
+  padding: 0px 20px;
+}
+
+.city {
+  font-size: 36px;
+  text-align: center;
+  line-height: 36px;
+  letter-spacing: -2px;
+  padding-top: 25px;
+}
+
+.hour {
+  font-size: 16px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.weather-condition {
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: -1px;
+  padding-bottom: 10px;
+}
+
+.current-day {
+  font-size: 20px;
+  letter-spacing: -1px;
+}
+
+.current-temp {
+  font-size: 36px;
+  line-height: 30px;
+}
+
+.wind {
+  font-size: 14px;
+  line-height: 16px;
+  padding-top: 40px;
+}
+
+.humidity,
+.precipitation {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.sun-icon {
+  font-size: 160px;
+  color: #fff1c1;
+  position: relative;
+  right: 25px;
+}
+
+.week-day {
+  font-size: 15px;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.daily-temp {
+  font-size: 15px;
+  text-align: center;
+  padding-bottom: 25px;
+}
