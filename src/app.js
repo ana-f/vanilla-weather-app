@@ -1,3 +1,24 @@
+// hour and day
+
+let date = new Date();
+let currentHour = document.querySelector(".hour");
+let hour = date.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
+let minutes = date.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+currentHour.innerHTML = `${hour}h${minutes}`;
+
+let weekDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+let day = weekDays[date.getDay()];
+let currentDay = document.querySelector(".current-day");
+currentDay.innerHTML = `${day}`;
+
+// weather search
+
 function displayTemperature(response) {
   let currentTemp = document.querySelector(".current-temp");
   let city = document.querySelector(".city");
@@ -7,7 +28,7 @@ function displayTemperature(response) {
   currentTemp.innerHTML = `${Math.round(response.data.main.temp)} °C`;
   city.innerHTML = response.data.name;
   weatherCondition.innerHTML = response.data.weather[0].description;
-  wind.innerHTML = `wind: ${Math.round(response.data.wind.speed)} km/h`; // está em nós?
+  wind.innerHTML = `wind: ${Math.round(response.data.wind.speed)} km/h`;
   humidity.innerHTML = `humidity: ${response.data.main.humidity}%`;
 }
 
