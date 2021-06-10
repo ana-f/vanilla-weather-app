@@ -80,9 +80,7 @@ footer {
   line-height: 16px;
 }
 
-.sun-icon {
-  font-size: 160px;
-  color: #fff1c1;
+.weather-icon {
   position: relative;
   right: 25px;
 }
