@@ -17,7 +17,7 @@ let day = weekDays[date.getDay()];
 let currentDay = document.querySelector(".current-day");
 currentDay.innerHTML = `${day}`;
 
-// weather search
+// city weather search
 
 function displayTemperature(response) {
   console.log(response.data);
