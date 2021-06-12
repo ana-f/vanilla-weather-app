@@ -19,23 +19,29 @@ currentDay.innerHTML = `${day}`;
 
 // city weather search
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let weekForecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["SAT", "SUN", "MON"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `
- <div class="col">
- <div> ${day} </div>
-  <div> 17° <span>14°<span> </div>
-  <img src="images/02d.png" alt="" width="30px" />
-  </div>`;
+      `<div class="col">
+      <div> ${day} </div>
+      <div> 17° <span>14°<span> </div>
+      <img src="images/02d.png" alt="" width="30px" />
+      </div>`;
   });
-
   forecastHTML = forecastHTML + `</div>`;
   weekForecast.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "031b9daf6c535f08d9a6bdcd27cd718d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -54,7 +60,9 @@ function displayTemperature(response) {
   wind.innerHTML = `wind: ${Math.round(response.data.wind.speed)} km/h`;
   humidity.innerHTML = `humidity: ${response.data.main.humidity}%`;
   icon.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
-  icon.setAttribute("alt", `response.data.weather[0].description`);
+  icon.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -70,8 +78,6 @@ function handleSubmit(event) {
 }
 
 search("Lisbon");
-
-displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
