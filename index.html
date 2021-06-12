@@ -48,7 +48,7 @@
       <form id="search-form">
         <input
           id="search-city"
-          type="text"
+          type="search"
           placeholder="type your city"
           autofocus="on"
           autocomplete="off"
@@ -57,20 +57,7 @@
         <input type="submit" value="🔍" class="border-0 rounded" />
       </form>
 
-      <div class="row row-cols-6">
-        <div class="col week-day">TUE</div>
-        <div class="col week-day">WED</div>
-        <div class="col week-day">THU</div>
-        <div class="col week-day">FRI</div>
-        <div class="col week-day">SAT</div>
-        <div class="col week-day">SUN</div>
-        <div class="col daily-temp">17°</div>
-        <div class="col daily-temp">20°</div>
-        <div class="col daily-temp">21°</div>
-        <div class="col daily-temp">22°</div>
-        <div class="col daily-temp">24°</div>
-        <div class="col daily-temp">25°</div>
-      </div>
+      <div id="forecast" class="week-day"></div>
     </div>
     <footer>
       <a href="https://github.com/ana-f/vanilla-weather-app" target="_blank"

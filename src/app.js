@@ -19,6 +19,25 @@ currentDay.innerHTML = `${day}`;
 
 // city weather search
 
+function displayForecast() {
+  let weekForecast = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["SAT", "SUN", "MON"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+ <div class="col">
+ <div> ${day} </div>
+  <div> 17° <span>14°<span> </div>
+  <img src="images/02d.png" alt="" width="30px" />
+  </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  weekForecast.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   console.log(response.data);
   let currentTemp = document.querySelector(".current-temp");
@@ -27,8 +46,9 @@ function displayTemperature(response) {
   let wind = document.querySelector(".wind");
   let humidity = document.querySelector(".humidity");
   let icon = document.querySelector("#icon");
-
-  currentTemp.innerHTML = `${Math.round(response.data.main.temp)} °C`;
+  currentTemp.innerHTML = `${Math.round(
+    response.data.main.temp
+  )} <small>°C<small>`;
   city.innerHTML = response.data.name;
   weatherCondition.innerHTML = response.data.weather[0].description;
   wind.innerHTML = `wind: ${Math.round(response.data.wind.speed)} km/h`;
@@ -50,6 +70,8 @@ function handleSubmit(event) {
 }
 
 search("Lisbon");
+
+displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
