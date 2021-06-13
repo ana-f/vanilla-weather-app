@@ -19,19 +19,32 @@ currentDay.innerHTML = `${day}`;
 
 // city weather search
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  let weekDay = week[date.getDay()];
+  return weekDay;
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let weekForecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["SAT", "SUN", "MON"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col">
-      <div> ${day} </div>
-      <div> 17° <span>14°<span> </div>
-      <img src="images/02d.png" alt="" width="30px" />
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+      <div> ${formatDay(forecastDay.dt)} </div>
+      <div> <span>${Math.round(forecastDay.temp.max)}°<span> <span>${Math.round(
+          forecastDay.temp.min
+        )}°<span> </div>
+        
+      <img src = "images/${forecastDay.weather[0].icon}.png" alt= "${
+          forecastDay.weather[0].description
+        }" width="30px" />
       </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   weekForecast.innerHTML = forecastHTML;
