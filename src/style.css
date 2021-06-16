@@ -9,12 +9,12 @@ body {
 
 ul {
   list-style: none;
-  padding-left: 15px;
 }
 
 form {
   text-align: center;
-  padding-top: 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 :focus {
@@ -22,71 +22,82 @@ form {
 }
 
 footer {
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
+  margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .background {
-  background: linear-gradient(
-    180.3deg,
-    rgb(214, 224, 255) 37.2%,
-    rgb(254, 168, 168) 137.3%
-  );
+  background: linear-gradient(to top, #fcf1ed 0%, #41b6e6 100%);
   border-radius: 10px 10px;
-  border: 2px solid rgb(214, 224, 255);
+  border: 1px solid #41b6e6;
   padding: 0px 20px;
 }
 
 .city {
-  font-size: 36px;
+  font-size: 35px;
   text-align: center;
-  line-height: 36px;
+  line-height: 35px;
   letter-spacing: -2px;
-  padding-top: 25px;
+  margin-top: 25px;
 }
 
 .hour {
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
-  padding-top: 10px;
+  margin-top: 10px;
 }
 
 .weather-condition {
-  font-size: 22px;
+  font-size: 25px;
   text-align: center;
   letter-spacing: -1px;
-  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .current-day {
-  font-size: 20px;
-  letter-spacing: -1px;
+  font-size: 15px;
 }
 
 .current-temp {
-  font-size: 36px;
+  font-size: 50px;
   line-height: 30px;
+}
+
+.celsius {
+  font-size: 25px;
+  position: relative;
+  top: -15px;
 }
 
 .wind {
   font-size: 14px;
   line-height: 16px;
-  padding-top: 40px;
+  margin-top: 45px;
 }
 
 .humidity {
   font-size: 14px;
-  line-height: 16px;
 }
 
 .weather-icon {
   position: relative;
-  right: 25px;
+  right: 32px;
 }
 
 .week-day {
   font-size: 15px;
+  line-height: 16px;
   text-align: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 25px;
+}
+
+.temp-min {
+  opacity: 65%;
 }

@@ -35,14 +35,12 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class="col">
-      <div> ${formatDay(forecastDay.dt)} </div>
-      <div> <span>${Math.round(forecastDay.temp.max)}°<span> <span>${Math.round(
-          forecastDay.temp.min
-        )}°<span> </div>
-        
-      <img src = "images/${forecastDay.weather[0].icon}.png" alt= "${
+        <div> ${formatDay(forecastDay.dt)} </div>
+        <img src = "images/${forecastDay.weather[0].icon}.png" alt= "${
           forecastDay.weather[0].description
-        }" width="30px" />
+        }" width="40px" />
+        <div>${Math.round(forecastDay.temp.max)}°</div> 
+        <div class="temp-min">${Math.round(forecastDay.temp.min)}°</div>
       </div>`;
     }
   });
@@ -58,7 +56,7 @@ function getForecast(coordinates) {
 }
 
 function displayTemperature(response) {
-  console.log(response.data);
+  //console.log(response.data);
   let currentTemp = document.querySelector(".current-temp");
   let city = document.querySelector(".city");
   let weatherCondition = document.querySelector(".weather-condition");
@@ -67,7 +65,7 @@ function displayTemperature(response) {
   let icon = document.querySelector("#icon");
   currentTemp.innerHTML = `${Math.round(
     response.data.main.temp
-  )} <small>°C<small>`;
+  )}<span class="celsius">°C</span>`;
   city.innerHTML = response.data.name;
   weatherCondition.innerHTML = response.data.weather[0].description;
   wind.innerHTML = `wind: ${Math.round(response.data.wind.speed)} km/h`;
