@@ -10,7 +10,7 @@ let minutes = date.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-currentHour.innerHTML = `${hour}h${minutes}`;
+currentHour.innerHTML = `<small>last updated: </small>${hour}h${minutes}`;
 
 let weekDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 let day = weekDays[date.getDay()];
